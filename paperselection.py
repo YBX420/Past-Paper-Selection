@@ -1,7 +1,8 @@
 import os
 import tkinter as tk
-
 path = "D:\\Study\\Uni\\Yr1"
-Courses = os.listdir(path)
 
-print(Courses)
+
+def get_courses(path):
+    Courses = os.listdir(path)
+    return Courses
