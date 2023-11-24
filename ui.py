@@ -26,15 +26,16 @@ def select_courses(listbox):
         
 
 
-
+# Bottom to trigger the further menu
 btn_selected = tk.Button(master=window, text="Select", command=lambda:course == select_courses(listbox_course))
 btn_selected.pack(side="bottom")
 
+'''
 file_inner_name_list = paperselection.get_courses(os.path.join(path,course))
 listbox = tk.Listbox(window,width=40,height=len(file_inner_name_list),selectmode = "MULTIPLE")
 for i in range(len(file_inner_name_list)):
     listbox.insert(i,file_inner_name_list[i])
-
+'''
 listbox_course.pack()
-listbox.pack()
+
 window.mainloop()
