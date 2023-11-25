@@ -1,6 +1,7 @@
 import os
 import tkinter as tk
-path = "D:\\Study\\Uni\\Yr1"
+path = os.getcwd()
+path = os.path.join(path,"Class_Materials")
 
 
 def get_courses(path):
