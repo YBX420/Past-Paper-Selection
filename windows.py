@@ -13,12 +13,11 @@ class Application(Frame):
         self.select = StringVar()
         root.geometry("500x300")
         self.window()
-        if self.select.get() != '':
-            self.window2()
- 
+        self.window2()
+
     def selectorLinstener(self,*args):
         self.select.set(self.selection_get())
-
+        
 
 
     def window(self):
@@ -34,16 +33,15 @@ class Application(Frame):
         self.selector.bind('<<ComboboxSelected>>',self.selectorLinstener)
 
         frame1.pack()
+        
 
 
     def window2(self):
         frame1 = Frame(self)
 
-        path = os.path.join(path,self.select.get())
-        file_paper_list = paperselection.get_courses(path)
-        path = os.getcwd()
-        path = os.path.join(path,"Class_Materials")
-        file_name_list = paperselection.get_courses(path)
+        path1 = os.getcwd()
+        path1 = os.path.join(path1,"Class_Materials")
+        file_name_list = paperselection.get_courses(path1)
         Label(frame1,text="Course").grid(row = 0, column= 0)
         self.selector=ttk.Combobox(frame1,width=40,height=len(file_name_list),values=file_name_list)
         self.selector.grid(row = 0, column = 1)
