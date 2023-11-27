@@ -1,12 +1,16 @@
 from tkinter import *
 from tkinter import ttk
+import customtkinter
 import paperselection
 import os
+
 
 
 class Application(Frame):
     def __init__(self,root) -> None:
         super().__init__()
+        customtkinter.set_appearance_mode("dark")
+        customtkinter.set_default_color_theme("dark-blue")
         self.master = root
         self.pack()
         self.envar = StringVar(None,"123")
