@@ -17,7 +17,6 @@ class Application(Frame):
         self.select = StringVar()
         root.geometry("500x300")
         self.window()
-        self.window2()
 
     def selectorLinstener(self,*args):
         self.select.set(self.selection_get())
@@ -45,9 +44,9 @@ class Application(Frame):
         path1 = os.getcwd()
         path1 = os.path.join(path1,"Class_Materials")
         file_name_list = paperselection.get_courses(path1)
-        Label(frame1,text="Course").grid(row = 0, column= 0)
+        Label(frame2,text="Class Materials").grid(row = 5, column= 0)
         self.selector=ttk.Combobox(frame2,width=40,height=len(file_name_list),values=file_name_list)
-        self.selector.grid(row = 0, column = 1)
+        self.selector.grid(row = 5, column = 1)
         self.selector.current(0)
         self.selector.bind('<<ComboboxSelected>>',self.selectorLinstener)
         frame2.pack()
